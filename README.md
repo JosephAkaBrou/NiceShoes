@@ -7,8 +7,8 @@
 
 ## Description des sources 
 
-* prevision-meteo
-* ip-api
+* prevision-meteo : https://www.prevision-meteo.ch/services/json/montpellier
+* ip-api : http://ip-api.com/json/90.113.110.0
 
 
 ## Difficultés
