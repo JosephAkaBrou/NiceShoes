@@ -5,6 +5,23 @@
 * API web
   
 
+## Description des sources 
+
+* prevision-meteo
+* ip-api
+
+
+## Difficultés
+
+* Trouver une API 
+  * Gratuite
+  * Sans clé
+
+## Ce qu'on a appris
+
+* Recupérer des données issuent d'une API Web
+* CROS policy
+
 ## 23/10/2019
 
 * Faire des recherches sur la CORS policy
