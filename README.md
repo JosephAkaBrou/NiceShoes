@@ -1,4 +1,5 @@
 # NiceShoes
+Official website : https://jojoakabrou.github.io/NiceShoes/
 <p> NiceShoes est un petit projet universitaire qui s'étale sur 3 jours. Il s'agit d'intégrer et de croiser des données issuent d'API web. Nous utilisons les technologies suivante : </p>
 
 * Javascript fetch method
