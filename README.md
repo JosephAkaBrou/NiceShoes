@@ -5,24 +5,24 @@
 * API web
   
 
-## Description des sources 
+### Description des sources 
 
 * prevision-meteo : https://www.prevision-meteo.ch/services/json/montpellier
 * ip-api : http://ip-api.com/json/90.113.110.0
 
 
-## Difficultés
+### Difficultées
 
 * Trouver une API 
   * Gratuite
   * Sans clé
 
-## Ce qu'on a appris
+### Ce qu'on a appris
 
 * Recupérer des données issuent d'une API Web
-* CROS policy
+* CORS policy
 
-## 23/10/2019
+### 23/10/2019
 
 * Faire des recherches sur la CORS policy
 * Trouver deux sources de donnnées issuent d'API web
