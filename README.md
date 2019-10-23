@@ -8,7 +8,9 @@ Official website : https://jojoakabrou.github.io/NiceShoes/
 
 ### Description des sources 
 
-* prevision-meteo : https://www.prevision-meteo.ch/services/json/montpellier
+* prevision-meteo : 
+  * https://www.prevision-meteo.ch/services/json/montpellier
+  * https://www.prevision-meteo.ch/services/json/lat=43.6107lng=3.8809
 * ip-api : http://ip-api.com/json/90.113.110.0
 
 
@@ -28,4 +30,4 @@ Official website : https://jojoakabrou.github.io/NiceShoes/
 * Faire des recherches sur la CORS policy
 * Trouver deux sources de donnnées issuent d'API web
 * Coder un fetch javascript sur les sources
-* Croiser les données 
+* Création githubpages
