@@ -4,6 +4,7 @@ function ville(V){
           return response.json();
         })
         .then(function(json) {
+          
           console.log("ville", json)
         });
 }
@@ -25,6 +26,7 @@ function ip(P){
 		document.body.innerHTML = b
 		}
 			
-		}) ;  	    	      
+		}) ;  	      
 		
 }
+        
