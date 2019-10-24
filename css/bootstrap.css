@@ -812,6 +812,12 @@ pre code {
   margin-left: -15px;
 }
 
+.move {
+  position: relative;
+  left: 260px;
+  bottom: 54px;
+} 
+
 .row:before,
 .row:after {
   display: table;
