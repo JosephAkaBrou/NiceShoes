@@ -4,7 +4,7 @@ function ville(V){
           return response.json();
         })
         .then(function(json) {
-        document.body.innerHTML = json.city_info.name;
+
           console.log("ville", json)
         });
 }
