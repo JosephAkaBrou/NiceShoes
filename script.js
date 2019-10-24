@@ -1,30 +1,31 @@
 function ville(V){
         fetch('https://www.prevision-meteo.ch/services/json/'+V)
         .then(function(response) {
-          return response.json();          
+          return response.json();
         })
         .then(function(json) {
-            dom_modif_winfo(json)
-            console.log("ville", json)
+          dom_modif_winfo(json)
+          console.log("ville", json)
         });
 }
-function ip(P){
-        var C = document.getElementById("text").value;
-        console.log("ip", C) 
-        
-        fetch('https://extreme-ip-lookup.com/json/'+C).then(function(response) { return response.json() }).then(function(json) {  
-            ville(json.city) 
-        var a = json.country    
-        
-        if(a != "France" || document.getElementById('text').value == '') {
-            alert("Saisissez une adresse IP francaise");
-            document.getElementById('text').value = '';
-            
-        }   
-        
-        }) ;          
-}
+function ip(){
 
+        fetch('https://ipapi.co/json/').then(function(response) { return response.json() }).then(function(json) {  
+            console.log(json.country_name)
+		var a = json.country_name;
+		
+		if(a != "France") {
+			alert("Saisissez une adresse IP francaise");
+			document.getElementById('text').value = '';
+			
+		}
+        else{
+            ville(json.city) ;
+        }
+		
+		}) ;  	      
+		
+}
 function dom_modif_winfo(json){
     var main_div = document.getElementById('main_div')
     main_div.innerHTML = json.city_info.name+'<br><br><div id="result"></div>'
@@ -43,4 +44,3 @@ function dom_modif_winfo(json){
         parent.insertBefore(div,subscribe)
     }	
 }
-        
