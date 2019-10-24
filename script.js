@@ -22,9 +22,6 @@ function ip(P){
 			alert("Saisissez une adresse IP francaise");
 			document.getElementById('text').value = '';			
 		}   
-		else {
-		document.body.innerHTML = b
-		}
 			
 		}) ;  	      
 		
