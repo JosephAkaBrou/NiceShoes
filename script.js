@@ -8,7 +8,7 @@ function ville(V){
         });
 }
 function ip(P){
-        var C = document.getElementsByClassName('sr').value;
+        var C = document.getElementById("text").value;
         console.log("ip", C) 
         fetch('https://extreme-ip-lookup.com/json/'+C).then(function(response) { return response.json() }).then(function(json) {  
             ville(json.city)  
@@ -17,5 +17,4 @@ function ip(P){
 
         });          
 }
-
     
