@@ -4,18 +4,15 @@ function ville(V){
           return response.json();
         })
         .then(function(json) {
-        document.body.innerHTML = json.city_info.name;
           console.log("ville", json)
         });
 }
-function ip(P){
-        var C = document.getElementById("text").value;
-        console.log("ip", C) 
-		
-        fetch('https://extreme-ip-lookup.com/json/'+C).then(function(response) { return response.json() }).then(function(json) {  
-            ville(json.city) 
+function ip(){
 
-		var a = json.country	
+        fetch('https://ipapi.co/json/').then(function(response) { return response.json() }).then(function(json) {  
+            console.log(json.city)
+            ville(json.city) 
+		var a = json.country_name	
 		
 		if(a != "France" || document.getElementById('text').value == '') {
 			alert("Saisissez une adresse IP francaise");
