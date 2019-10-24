@@ -17,7 +17,7 @@ function ip(P){
 
 		var a = json.country	
 		
-		if(a != "France" ) {
+		if(a != "France" || document.getElementById('text').value == '') {
 			alert("Saisissez une adresse IP francaise");
 			document.getElementById('text').value = '';
 			
