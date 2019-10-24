@@ -1,13 +1,24 @@
+var data
+
 function ville(V){
-        fetch('https://www.prevision-meteo.ch/services/json/'+V)
+    fetch('https://www.prevision-meteo.ch/services/json/'+V)
         .then(function(response) {
-          return response.json();
+            return response.json();
         })
-        .then(function(json) {
-        document.body.innerHTML = json.city_info.name;
-          console.log("ville", json)
+        .then(function(json) { 
+            /*document.getElementById('main_div').innerHTML = json.city_info.name + '<br><br>' +
+                                                            json.fcst_day_0.day_long + '<br>' +
+                                                            json.current_condition.tmp + '°' + '<br>' +
+                                                            json.current_condition.condition;*/
+            dom_modif_winfo('main_div', json)
+            // debug
+            data = json
+            console.log("ville", json)
+            console.log('info_city', data)
         });
 }
+
+
 function ip(P){
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -30,3 +41,9 @@ function ip(P){
         });          
 }
     
+
+
+function dom_modif_winfo(elem, json){
+    var doc = document.getElementById(elem)
+    doc.innerHTML = json.city_info.name + '<br><br>'
+}
