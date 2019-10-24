@@ -32,3 +32,9 @@ Official website : https://jojoakabrou.github.io/NiceShoes/
 * Trouver deux sources de donnnées issuent d'API web
 * Coder un fetch javascript sur les sources
 * Création githubpages
+
+Fond d'écran
+
+https://media.giphy.com/media/ijhLl5UuE7yec/giphy.gif
+http://gph.is/1JayjL1
+https://giphy.com/gifs/ijhLl5UuE7yec/html5
