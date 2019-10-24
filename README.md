@@ -8,7 +8,7 @@ Official website : https://jojoakabrou.github.io/NiceShoes/
 
 ### Description des sources 
 
-* ip-api : https://extreme-ip-lookup.com/json/90.113.110.0
+* ip-api : http://ip-api.com/json/90.113.110.0
 * prevision-meteo : 
   * https://www.prevision-meteo.ch/services/json/montpellier
   * https://www.prevision-meteo.ch/services/json/lat=43.6107lng=3.8809
