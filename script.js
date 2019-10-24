@@ -4,7 +4,18 @@ function ville(V){
           return response.json();
         })
         .then(function(json) {
-          console.log(json)
+          console.log("ville", json)
         });
 }
-ville("montpellier")
+function ip(P){
+        fetch('https://extreme-ip-lookup.com/json/'+P).then(function(response) { return response.json() }).then(function(json) { 
+            console.log("ip", json)  
+            ville(json.city)  
+            
+
+
+        });          
+}
+
+    
+ip("90.113.110.0");
