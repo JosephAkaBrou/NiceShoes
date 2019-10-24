@@ -4,7 +4,7 @@ function ville(V){
           return response.json();
         })
         .then(function(json) {
-
+          
           console.log("ville", json)
         });
 }
@@ -16,13 +16,17 @@ function ip(P){
             ville(json.city) 
 
 		var a = json.country	
+		var b = json.city
 		
 		if(a != "France" || document.getElementById('text').value == '') {
 			alert("Saisissez une adresse IP francaise");
-			document.getElementById('text').value = '';
-			
+			document.getElementById('text').value = '';			
 		}   
-		
+		else {
+		document.body.innerHTML = b
+		}
+			
 		}) ;  	      
 		
 }
+      
