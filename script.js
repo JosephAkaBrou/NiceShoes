@@ -29,6 +29,7 @@ desc  : get the ip client device and call ville(v) function
 param : 
 */
 function ip(){
+
     fetch('https://ipapi.co/json/').then(function(response) { return response.json() }).then(function(json) {
 		var a = json.country_name;
 		
@@ -50,9 +51,30 @@ param : json data format from API https://www.prevision-meteo.ch/services/json
 function dom_modif_winfo(json){
     var main_div = document.getElementById('main_div')
     main_div.innerHTML = json.city_info.name+'<br><br><div id="result"></div>'
-
+    console.log(json)
     for (var i = 0; i <= 3; i++) {
         var div = document.createElement('div')
+        div.setAttribute("data-toggle","tooltip")
+        div.setAttribute("data-placement","bottom")
+        div.setAttribute("data-html","true")
+        var infotxt = ''
+        var current_hour = json.current_condition.hour.slice(0,2)
+        if(current_hour.charAt(0)=='0'){
+            current_hour = current_hour.slice(1,2)
+        }
+        for (var j = current_hour; j < parseInt(current_hour) + 5; j++) {
+            infotxt += json['fcst_day_'+i].hourly_data[j+"H00"].CONDITION+" "+ 
+                        json['fcst_day_'+i].hourly_data[""+j+"H00"].TMP2m+"<img src="+json['fcst_day_'+i].hourly_data[""+j+"H00"].ICON+" /> <br>"
+                        console.log(json['fcst_day_'+i].hourly_data[j+"H00"].CONDITION)
+                        console.log(j)
+                        console.log(current_hour)
+        }
+        div.setAttribute("title",""+infotxt+"")
+        
+
+
+
+        div.id = json['fcst_day_'+i].day_long
         var br = document.createElement('br')
         div.setAttribute('class', 'col-md-3 col-sd-6')
         div.appendChild(document.createTextNode(json['fcst_day_'+i].day_long))
@@ -61,9 +83,19 @@ function dom_modif_winfo(json){
         div.appendChild(document.createElement('br'))
         div.appendChild(document.createTextNode(json['fcst_day_'+i].condition))
         div.appendChild(document.createElement('br'))
+        var myImg = new Image();
+        myImg.src = ''+json['fcst_day_'+i].icon+'';
+        div.appendChild(myImg);
         div.appendChild(document.createElement('br'))
+        div.appendChild(document.createElement('br'))
+
+         // L'image est ajoutée au DOM
         var result = document.getElementById('result')
         var parent = result.parentNode
         parent.insertBefore(div,result)
-    }	
+    }
+    /* Active infobulle */
+  $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})	
 }
