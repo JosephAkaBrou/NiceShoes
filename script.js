@@ -66,4 +66,10 @@ function dom_modif_winfo(json){
         var parent = result.parentNode
         parent.insertBefore(div,result)
     }	
+    errTestVille(json)   
+}
+
+
+function errTestVille(x){
+    document.getElementsByName("villeTest")[0].innerHTML = "Vous n'êtes pas à " + x.city_info.name + " ?";
 }
