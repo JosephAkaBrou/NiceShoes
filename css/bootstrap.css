@@ -1113,7 +1113,19 @@ pre code {
 @media (min-width: 768px) {
   .container {
     width: 750px;
+    position: relative;
+    bottom: 30px;
   }
+
+  .container1 {
+    position: relative;
+    bottom: 100px;
+  }
+  .motto {
+    position: relative;
+    bottom: 50px;
+  }
+
   .col-sm-1,
   .col-sm-2,
   .col-sm-3,
