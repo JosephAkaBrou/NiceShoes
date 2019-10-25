@@ -29,6 +29,8 @@ desc  : get the ip client device and call ville(v) function
 param : 
 */
 function ip(){
+    $('[data-toggle="tooltip"]').tooltip();
+
     fetch('https://ipapi.co/json/').then(function(response) { return response.json() }).then(function(json) {
 		var a = json.country_name;
 		
@@ -50,9 +52,13 @@ param : json data format from API https://www.prevision-meteo.ch/services/json
 function dom_modif_winfo(json){
     var main_div = document.getElementById('main_div')
     main_div.innerHTML = json.city_info.name+'<br><br><div id="result"></div>'
-
+    console.log(json)
     for (var i = 0; i <= 3; i++) {
         var div = document.createElement('div')
+        div.setAttribute("data-toggle","tooltip")
+        div.setAttribute("data-placement","bottom")
+        div.setAttribute("title",""+json['fcst_day_'+i].day_long+"")
+        div.id = json['fcst_day_'+i].day_long
         var br = document.createElement('br')
         div.setAttribute('class', 'col-md-3 col-sd-6')
         div.appendChild(document.createTextNode(json['fcst_day_'+i].day_long))
@@ -61,7 +67,13 @@ function dom_modif_winfo(json){
         div.appendChild(document.createElement('br'))
         div.appendChild(document.createTextNode(json['fcst_day_'+i].condition))
         div.appendChild(document.createElement('br'))
+        var myImg = new Image();
+        myImg.src = ''+json['fcst_day_'+i].icon+'';
+        div.appendChild(myImg);
         div.appendChild(document.createElement('br'))
+        div.appendChild(document.createElement('br'))
+
+         // L'image est ajoutée au DOM
         var result = document.getElementById('result')
         var parent = result.parentNode
         parent.insertBefore(div,result)
