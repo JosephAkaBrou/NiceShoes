@@ -17,9 +17,11 @@ desc  : get the ip client device and call ville(v) function
 param : v array the city of the ip client device
 */
 function ville(v){
-    fetch('https://www.prevision-meteo.ch/services/json/'+v)
-    .then(function(response) { return response.json()})
-        .then(function(json) { dom_modif_winfo(json)});
+    fetch('https://www.prevision-meteo.ch/services/json/'+v).then(function(response) { return response.json(); })
+        .then(function(json) {
+            dom_modif_winfo(json)
+        }
+    );
 }
 
 /*
@@ -60,14 +62,17 @@ function dom_modif_winfo(json){
         if(current_hour.charAt(0)=='0'){
             current_hour = current_hour.slice(1,2)
         }
-        for (var j = current_hour; j < parseInt(current_hour) + 4; j++) {
-            infotxt += j+"h | "+json['fcst_day_'+i].hourly_data[j+"H00"].CONDITION+"  | "+ 
-                        json['fcst_day_'+i].hourly_data[""+j+"H00"].TMP2m+"° | <img src="+json['fcst_day_'+i].hourly_data[""+j+"H00"].ICON+" /> <br>"
+        for (var j = current_hour; j < parseInt(current_hour) + 5; j++) {
+            infotxt += json['fcst_day_'+i].hourly_data[j+"H00"].CONDITION+" "+ 
+                        json['fcst_day_'+i].hourly_data[""+j+"H00"].TMP2m+"<img src="+json['fcst_day_'+i].hourly_data[""+j+"H00"].ICON+" /> <br>"
                         console.log(json['fcst_day_'+i].hourly_data[j+"H00"].CONDITION)
                         console.log(j)
-                   
+                        console.log(current_hour)
         }
         div.setAttribute("title",""+infotxt+"")
+        
+
+
 
         div.id = json['fcst_day_'+i].day_long
         var br = document.createElement('br')
@@ -88,9 +93,17 @@ function dom_modif_winfo(json){
         var result = document.getElementById('result')
         var parent = result.parentNode
         parent.insertBefore(div,result)
-    }
+    }	
+    errTestVille(json)   
+    
     /* Active infobulle */
   $(function () {
   $('[data-toggle="tooltip"]').tooltip()
 })	
+
 }
+ 
+function errTestVille(x){
+    document.getElementsByName("villeTest")[0].innerHTML = "<a onclick='input()'href='#'> Vous n'êtes pas à " + x.city_info.name + " ? </a>";
+}
+
