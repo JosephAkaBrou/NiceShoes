@@ -16,8 +16,14 @@ function controle(){
     console.log(P)
     if (event.keyCode === 13) {
         fetch('https://www.prevision-meteo.ch/services/json/'+P).then(function(response) { return response.json() }).then(function(json){
-            var a = json.city_info.country;
-            console.log(a);
+            if( json.city_info == 'undefined'){
+                var a = json.city_info.country;
+                console.log(a);
+            }
+            else {
+                var a = "";
+            }
+                
             if(a != "France") {
                 alert("Saisissez le nom d'une ville Française");
             }
