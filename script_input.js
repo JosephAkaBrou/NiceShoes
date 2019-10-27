@@ -16,7 +16,10 @@ function controle(){
     console.log(P)
     if (event.keyCode === 13) {
         fetch('https://www.prevision-meteo.ch/services/json/'+P).then(function(response) { return response.json() }).then(function(json){
-            if( json.city_info != 'undefined'){
+            console.log("1",json);
+            console.log("2",json.errors);
+            test = json.city_info ;
+            if(test != undefined){
                 var a = json.city_info.country;
                 console.log(a);
             }
