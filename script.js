@@ -62,7 +62,7 @@ function dom_modif_winfo(json){
         if(current_hour.charAt(0)=='0'){
             current_hour = current_hour.slice(1,2)
         }
-        for (var j = current_hour; j < parseInt(current_hour) + 5; j++) {
+        for (var j = current_hour; j < parseInt(current_hour) + 4; j++) {
             infotxt += json['fcst_day_'+i].hourly_data[j+"H00"].CONDITION+" "+ 
                         json['fcst_day_'+i].hourly_data[""+j+"H00"].TMP2m+"<img src="+json['fcst_day_'+i].hourly_data[""+j+"H00"].ICON+" /> <br>"
                         console.log(json['fcst_day_'+i].hourly_data[j+"H00"].CONDITION)
