@@ -7114,3 +7114,9 @@ td.visible-print {
     display: none !important;
   }
 }
+
+
+a:link { text-decoration: none; color:#FFFFFF; } 
+a:visited { text-decoration: none; color:#ffffff; }
+a:hover { text-decoration: none; color:#ffffff; } 
+a:active { text-decoration: none; color:#FFFFFF; } 
