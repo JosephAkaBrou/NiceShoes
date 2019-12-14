@@ -1,7 +1,7 @@
 function input(){
 document.getElementsByName("villeTest")[0].innerHTML = "";
 const aff = document.getElementById('main_div');
-aff.innerHTML = "<input id = 'input_check' class='form-control transparent-input' onkeyup='return forceLower(this)'  border = 'none' onkeypress='controle()' background= 'tranparent' type='text' name='name' placeholder='Field title...'  required>";
+aff.innerHTML = "<input id = 'input_check' class='form-control transparent-input' onkeyup='return forceLower(this)'  border = 'none' onkeypress='controle()' background= 'tranparent' type='text' name='name' placeholder='Mettre une ville' style='margin-right:30%;margin-left:30%;font-size:18pt;height:20%;width:40%;Text-ALIGN:center';>";
 }
 
 
