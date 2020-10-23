@@ -1,5 +1,5 @@
 # NiceShoes
-Official website : https://jojoakabrou.github.io/NiceShoes/
+Official website : https://JosephAkaBrou.github.io/NiceShoes/
 <p> NiceShoes est un petit projet universitaire qui s'étale sur 3 jours. Il s'agit d'intégrer et de croiser des données issuent d'API web gratuite et sans clé. Aves NiceShoes vous avez la possibilité de connaître les prévisions météos issues du site web https://www.prevision-meteo.ch en fonction de l'endroit où vous êtes. 
   
 Nous utilisons les technologies suivante : </p>
